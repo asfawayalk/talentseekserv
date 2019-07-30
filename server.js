@@ -16,10 +16,11 @@ app.use(bodyParser.json());
 
 // DB Config
 const db = require('./config/keys').mongoURI;
+console.log(db);
 
 // Connect to MongoDB
 mongoose
-  .connect(db, { useNewUrlParser: true }) // Let us remove that nasty deprecation warrning :)
+  .connect(''+db+'', { useNewUrlParser: true }) // Let us remove that nasty deprecation warrning :)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
